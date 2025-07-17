@@ -1,0 +1,10 @@
+venv/
+.idea
+.vscode/
+models_testing/
+yolov3.cfg
+yolov3.weights
+queue.db
+__pycache__/
+example_photos/
+uploaded_images/

@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<title>Handling of http get and post request</title>
+	<style>
+		div {
+			width: 400px;
+			border: 1px solid green;
+			padding: 10px;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+
+<body style="display: flex;">
+	<div>
+		<h1>Scan image from disk</h1>
+		<form method="GET"
+			action="{{ url_for('get_people_disk') }}">
+			<input type="text"
+				name="path"
+				placeholder="Path">
+			<button type="submit">Submit</button>
+		</form>
+		<h1>Scan image from URL</h1>
+		<form method="GET"
+			action="{{ url_for('get_people_url') }}">
+			<input type="text"
+				name="url"
+				placeholder="Url">
+			<button type="submit">Submit</button>
+		</form>
+		<h1>Upload image and scan</h1>
+		<form method="POST"
+			action="{{ url_for('handle_post') }}" enctype="multipart/form-data">
+			<input type="file"
+				name="image"
+				placeholder="Upload image">
+			<button type="submit">Submit</button>
+		</form>
+		<h1>Check task status</h1>
+		<form method="GET"
+			action="{{ url_for('get_task_status_by_id') }}">
+			<input type="text"
+				name="task_id"
+				placeholder="Task id">
+			<button type="submit">Check</button>
+		</form>
+		<h1>Check queue status</h1>
+		<form method="GET"
+			action="{{ url_for('get_queue_status') }}">
+			<button type="submit">Check</button>
+		</form>
+	</div>
+
+	<div>
+		<h1>Save processed img to disk?</h1>
+		<form method="GET"
+			action="{{ url_for('handle_saving') }}">
+			<input type="checkbox"
+				name="save"
+				placeholder="No">
+			<input type="text"
+				name="path"
+				placeholder="Path to save to">
+			<button type="submit">Confirm</button>
+		</form>
+	</div>
+
+</body>
+
+</html>
