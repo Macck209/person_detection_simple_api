@@ -105,7 +105,7 @@ def handle_saving():
 
 if __name__ == "__main__":
     UPLOAD_FOLDER = 'uploaded_images'
-    app.secret_key = 'human_detect_secret_api_key' # incredibly secret :O
+    app.secret_key = 'human_detect_secret_api_key'  # incredibly secret :O
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     scheduler = Scheduler()
     app.run(debug=True)

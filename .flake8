@@ -1,4 +1,2 @@
 [flake8]
-ignore=
-    # line too long
-    E501
+ignore = E501
